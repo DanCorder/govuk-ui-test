@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DccTestWebApp", "DccTestWebApp\DccTestWebApp.csproj", "{35518392-A874-49E5-9773-15874C629ED4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GovUkDesignSystem", "..\gpg-code\GovUkDesignSystem\GovUkDesignSystem.csproj", "{52F96FA3-673B-4BDA-9DF1-6558A852E6B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35518392-A874-49E5-9773-15874C629ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35518392-A874-49E5-9773-15874C629ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35518392-A874-49E5-9773-15874C629ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35518392-A874-49E5-9773-15874C629ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52F96FA3-673B-4BDA-9DF1-6558A852E6B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F96FA3-673B-4BDA-9DF1-6558A852E6B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F96FA3-673B-4BDA-9DF1-6558A852E6B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F96FA3-673B-4BDA-9DF1-6558A852E6B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98B861C5-2414-458F-8562-FFE90DFFB9D0}
+	EndGlobalSection
+EndGlobal
