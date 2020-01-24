@@ -106,13 +106,42 @@ namespace DccTestWebApp.Controllers
         // GET: GovUk/Create
         public ActionResult Create()
         {
+            return View(new GovUkAddress());
+        }
+
+        // GET: GovUk/Create
+        public ActionResult CreateUsingPartial()
+        {
             return View(new GovUkPageModel());
         }
 
         // POST: GovUk/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(GovUkPageModel viewModel)
+        public ActionResult Create(GovUkAddress viewModel)
+        {
+            viewModel.ParseAndValidateParameters(Request, m => m.ID);
+            viewModel.ParseAndValidateParameters(Request, m => m.Street);
+            viewModel.ParseAndValidateParameters(Request, m => m.PostCode);
+
+            if (viewModel.HasAnyErrors())
+            {
+                return View(nameof(Create), viewModel);
+            }
+
+            try
+            {
+                return RedirectToAction(nameof(Create));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateUsingPartial(GovUkPageModel viewModel)
         {
             viewModel.ParseAndValidateParameters(Request, m => m.Address.ID);
             viewModel.ParseAndValidateParameters(Request, m => m.Address.Street);
