@@ -1,0 +1,75 @@
+﻿@using GovUkDesignSystem
+@using GovUkDesignSystem.GovUkDesignSystemComponents
+@model DccTestWebApp.Models.GovUkAddressExperimental
+
+@{
+    ViewData["Title"] = "GovUK Create Experimental";
+}
+
+<h1>Create</h1>
+
+<h4>Address</h4>
+<hr />
+<div class="row">
+
+    @(Html.GovUkErrorSummary(ViewData.ModelState))
+
+    <div class="col-md-4">
+        <form asp-action="CreateExperimental">
+            @(Html.AntiForgeryToken())
+
+            @(Html.GovUkTextInputFor(
+                m => m.ID,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "ID"
+                },
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
+            @(Html.GovUkTextInputFor(
+                m => m.Street,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Street"
+                },
+                hintOptions: new HintViewModel
+                {
+                    Html = @<text>
+                            House number and street
+                    </text>
+                 },
+                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+             ))
+
+            @(Html.GovUkTextInputFor(
+                m => m.PostCode,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Postcode"
+                },
+                hintOptions: new HintViewModel
+                {
+                    Html = @<text>
+                            Postcode
+                    </text>
+                 },
+                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+             ))
+
+            @(Html.GovUkButton(new ButtonViewModel
+            {
+                Text = "Submit",
+                Classes = "govuk-!-margin-bottom-4"
+            }))
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

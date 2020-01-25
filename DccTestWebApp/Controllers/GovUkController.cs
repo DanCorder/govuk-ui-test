@@ -109,12 +109,6 @@ namespace DccTestWebApp.Controllers
             return View(new GovUkAddress());
         }
 
-        // GET: GovUk/Create
-        public ActionResult CreateUsingPartial()
-        {
-            return View(new GovUkPageModel());
-        }
-
         // POST: GovUk/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -139,6 +133,38 @@ namespace DccTestWebApp.Controllers
             }
         }
 
+
+        // GET: GovUk/Create
+        public ActionResult CreateExperimental()
+        {
+            return View(new GovUkAddressExperimental());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateExperimental(GovUkAddressExperimental viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(CreateExperimental), viewModel);
+            }
+
+            try
+            {
+                return RedirectToAction(nameof(CreateExperimental));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: GovUk/CreateUsingPartial
+        public ActionResult CreateUsingPartial()
+        {
+            return View(new GovUkPageModel());
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateUsingPartial(GovUkPageModel viewModel)
@@ -149,12 +175,12 @@ namespace DccTestWebApp.Controllers
 
             if (viewModel.HasAnyErrors())
             {
-                return View(nameof(Create), viewModel);
+                return View(nameof(CreateUsingPartial), viewModel);
             }
 
             try
             {
-                return RedirectToAction(nameof(Create));
+                return RedirectToAction(nameof(CreateUsingPartial));
             }
             catch
             {

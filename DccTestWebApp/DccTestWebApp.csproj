@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\gpg-code\GovUkDesignSystem\GovUkDesignSystem.csproj" />
+    <ProjectReference Include="..\..\govuk-design-system-dotnet\GovUkDesignSystem.csproj" />
   </ItemGroup>
 
 
