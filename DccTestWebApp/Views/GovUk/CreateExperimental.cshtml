@@ -10,6 +10,7 @@
 
 <h4>Address</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         @(Html.GovUkErrorSummary(ViewData.ModelState))
@@ -19,6 +20,9 @@
     <div class="col-md-4">
         <form asp-action="CreateExperimental">
             @(Html.AntiForgeryToken())
+
+            @(Html.TextBoxFor(m => m.MandatoryInt))
+            @Html.ValidationMessageFor(m => m.MandatoryInt)
 
             @(Html.GovUkTextInputFor(
                 m => m.ID,
@@ -72,6 +76,3 @@ classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

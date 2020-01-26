@@ -12,6 +12,9 @@ namespace DccTestWebApp.Models
     public class GovUkAddressExperimental : GovUkViewModel //qq:DCC remove inheritance
     {
         [GovUkIntegerValidator]
+        [GovUkIntegerValidator2]
+        public int MandatoryInt { get; set; }
+        
         public int? ID { get; set; }
         public string Street { get; set; }
         public string PostCode { get; set; }
