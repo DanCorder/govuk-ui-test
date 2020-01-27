@@ -13,14 +13,8 @@ namespace DccTestWebApp.Models
 {
     public class GovUkAddressExperimental : GovUkViewModel //qq:DCC remove inheritance
     {
-        [GovUkIntegerValidator]
-        [GovUkIntegerValidator2]
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
-        [GovUkAdditionalMetadataValue(GovUkMandatoryIntBinder.NameAtStartOfSentenceKey, "Test mandatory int")]
-        [GovUkAdditionalMetadataValue(GovUkMandatoryIntBinder.NameWithinSentenceKey, "test mandatory int")]
-        //[ModelBinder(typeof(GovUkMandatoryIntBinder), Name = "qq:DCC name")] // Doesn't work because we need the correct name to get the submitted value from the context
-        //[GovUkDisplayNameForErrors(NameAtStartOfSentence = "Test mandatory int", NameWithinSentence = "test mandatory int")]
-        //[ModelBinderWithParameters(typeof(GovUkMandatoryIntBinder), "Test mandatory int", "test mandatory int")]
+        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Test mandatory int", NameWithinSentence = "test mandatory int")]
         public int MandatoryInt { get; set; }
         
         public int? ID { get; set; }
