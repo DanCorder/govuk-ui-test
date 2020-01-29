@@ -21,8 +21,27 @@
         <form asp-action="CreateExperimental">
             @(Html.AntiForgeryToken())
 
-            @(Html.TextBoxFor(m => m.MandatoryInt))
-            @Html.ValidationMessageFor(m => m.MandatoryInt)
+            @*(Html.TextBoxFor(m => m.MandatoryInt))*@
+            @*Html.ValidationMessageFor(m => m.MandatoryInt)*@
+
+            @(Html.GovUkTextInputForDcc(
+                m => m.MandatoryInt,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Mandatory Int"
+                },
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
+            @(Html.GovUkTextInputForDcc(
+                m => m.Child.ChildInt,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Child Int"
+                },
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
 
             @(Html.GovUkTextInputFor(
                 m => m.ID,

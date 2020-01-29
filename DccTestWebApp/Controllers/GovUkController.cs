@@ -57,7 +57,9 @@ namespace DccTestWebApp.Controllers
         // GET: GovUk/Create
         public ActionResult CreateExperimental()
         {
-            return View(new GovUkAddressExperimental());
+            var model = new GovUkAddressExperimental();
+            model.Child.ChildInt = 42;
+            return View(model);
         }
 
         [HttpPost]
