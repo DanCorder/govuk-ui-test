@@ -47,7 +47,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputUsingModelStateFor(
+            @(await Html.GovUkTextInputFor(
                 m => m.BinderValidatedString,
                 labelOptions: new LabelViewModel
                 {
@@ -56,21 +56,11 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputUsingModelStateFor(
+            @(await Html.GovUkTextInputFor(
                 m => m.Child.ChildString,
                 labelOptions: new LabelViewModel
                 {
                     Text = "Child string"
-                },
-                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
-            ))
-
-
-            @(Html.GovUkTextInputFor(
-                m => m.CustomValidatedString,
-                labelOptions: new LabelViewModel
-                {
-                    Text = "Custom string"
                 },
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))

@@ -66,8 +66,6 @@ namespace DccTestWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperimental(GovUkAddressExperimental viewModel)
         {
-            viewModel.ParseAndValidateParameters(Request, m => m.CustomValidatedString);
-
             if (!ModelState.IsValid || viewModel.HasAnyErrors())
             {
                 return View(nameof(CreateExperimental), viewModel);

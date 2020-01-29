@@ -18,10 +18,6 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated string")]
         public string BinderValidatedString { get; set; }
 
-        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a custom validated String")]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Custom validated string", NameWithinSentence = "custom validated string")]
-        public string CustomValidatedString { get; set; }
-
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
     }
