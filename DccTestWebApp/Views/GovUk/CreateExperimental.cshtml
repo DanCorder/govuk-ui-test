@@ -18,14 +18,19 @@
 </div>
 <div class="row">
     <div class="col-md-4">
+        @(Html.GovUkErrorSummary())
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
         <form asp-action="CreateExperimental">
             @(Html.AntiForgeryToken())
 
             @*(Html.TextBoxFor(m => m.MandatoryInt))*@
             @*Html.ValidationMessageFor(m => m.MandatoryInt)*@
 
-            @(Html.GovUkTextInputForDcc(
-                m => m.MandatoryInt,
+            @(await Html.GovUkTextInputForDcc(
+                m => m.BinderValidatedInt,
                 labelOptions: new LabelViewModel
                 {
                     Text = "Mandatory Int"
@@ -33,7 +38,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(Html.GovUkTextInputForDcc(
+            @(await Html.GovUkTextInputForDcc(
                 m => m.Child.ChildInt,
                 labelOptions: new LabelViewModel
                 {
@@ -44,7 +49,7 @@
 
 
             @(Html.GovUkTextInputFor(
-                m => m.ID,
+                m => m.CustomValidatedId,
                 labelOptions: new LabelViewModel
                 {
                     Text = "ID"
