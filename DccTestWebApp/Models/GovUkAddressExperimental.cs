@@ -13,12 +13,13 @@ namespace DccTestWebApp.Models
         [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Binder validated int", NameWithinSentence = "binder validated int")]
         public int? BinderValidatedInt { get; set; }
 
-        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a custom validated ID")]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Custom validated ID", NameWithinSentence = "custom validated ID")]
-        public int? CustomValidatedId { get; set; }
+        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
+        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Binder validated string", NameWithinSentence = "binder validated string")]
+        public string BinderValidatedString { get; set; }
 
-        public string Street { get; set; }
-        public string PostCode { get; set; }
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a custom validated String")]
+        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Custom validated string", NameWithinSentence = "custom validated string")]
+        public string CustomValidatedString { get; set; }
 
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
@@ -29,5 +30,9 @@ namespace DccTestWebApp.Models
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
         [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Child int", NameWithinSentence = "child int")]
         public int? ChildInt { get; set; }
+
+        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
+        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Child string", NameWithinSentence = "child string")]
+        public string ChildString { get; set; }
     }
 }

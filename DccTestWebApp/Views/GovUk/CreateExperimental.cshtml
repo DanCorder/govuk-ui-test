@@ -29,7 +29,7 @@
             @*(Html.TextBoxFor(m => m.MandatoryInt))*@
             @*Html.ValidationMessageFor(m => m.MandatoryInt)*@
 
-            @(await Html.GovUkTextInputForDcc(
+            @(await Html.GovUkTextInputFor(
                 m => m.BinderValidatedInt,
                 labelOptions: new LabelViewModel
                 {
@@ -38,7 +38,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputForDcc(
+            @(await Html.GovUkTextInputFor(
                 m => m.Child.ChildInt,
                 labelOptions: new LabelViewModel
                 {
@@ -47,46 +47,34 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-
-            @(Html.GovUkTextInputFor(
-                m => m.CustomValidatedId,
+            @(await Html.GovUkTextInputUsingModelStateFor(
+                m => m.BinderValidatedString,
                 labelOptions: new LabelViewModel
                 {
-                    Text = "ID"
+                    Text = "Model state string"
                 },
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(Html.GovUkTextInputFor(
-                m => m.Street,
+            @(await Html.GovUkTextInputUsingModelStateFor(
+                m => m.Child.ChildString,
                 labelOptions: new LabelViewModel
                 {
-                    Text = "Street"
+                    Text = "Child string"
                 },
-                hintOptions: new HintViewModel
-                {
-                    Html = @<text>
-                                House number and street
-                    </text>
-},
-classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
-))
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
 
             @(Html.GovUkTextInputFor(
-                m => m.PostCode,
+                m => m.CustomValidatedString,
                 labelOptions: new LabelViewModel
                 {
-                    Text = "Postcode"
+                    Text = "Custom string"
                 },
-                hintOptions: new HintViewModel
-                {
-                    Html = @<text>
-                                Postcode
-                    </text>
-},
-classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
-))
-
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+            
             @(Html.GovUkButton(new ButtonViewModel
             {
                 Text = "Submit",
