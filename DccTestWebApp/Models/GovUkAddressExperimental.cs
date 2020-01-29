@@ -1,5 +1,6 @@
 ﻿using GovUkDesignSystem;
 using GovUkDesignSystem.Attributes;
+using GovUkDesignSystem.Attributes.DataBinding;
 using GovUkDesignSystem.Attributes.ValidationAttributes;
 using GovUkDesignSystem.ModelBinders;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,11 @@ namespace DccTestWebApp.Models
     public class GovUkAddressExperimental : GovUkViewModel //qq:DCC remove inheritance
     {
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Binder validated int", NameWithinSentence = "binder validated int")]
+        [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a binder validated int", NameAtStartOfSentence = "Binder validated int")]
         public int? BinderValidatedInt { get; set; }
 
         [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Binder validated string", NameWithinSentence = "binder validated string")]
+        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated string")]
         public string BinderValidatedString { get; set; }
 
         [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a custom validated String")]
@@ -28,11 +29,11 @@ namespace DccTestWebApp.Models
     public class DccAddressChild
     {
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Child int", NameWithinSentence = "child int")]
+        [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a child int", NameAtStartOfSentence = "Child int")]
         public int? ChildInt { get; set; }
 
         [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDisplayNameForErrors(NameAtStartOfSentence = "Child string", NameWithinSentence = "child string")]
+        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child string")]
         public string ChildString { get; set; }
     }
 }

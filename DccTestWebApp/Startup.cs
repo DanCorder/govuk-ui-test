@@ -20,7 +20,7 @@ namespace DccTestWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews(options =>
-                options.ModelMetadataDetailsProviders.Add(new GovUkValidationMetadataProvider()));
+                options.ModelMetadataDetailsProviders.Add(new GovUkDataBindingErrorTextProvider()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
