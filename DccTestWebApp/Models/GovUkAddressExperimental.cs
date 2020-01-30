@@ -18,6 +18,13 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated string")]
         public string BinderValidatedString { get; set; }
 
+        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
+        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated text area string")]
+        public string BinderValidatedTextArea { get; set; }
+
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a custom validated text area string")]
+        public string CustomValidatedTextArea { get; set; }
+
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
     }
@@ -31,5 +38,9 @@ namespace DccTestWebApp.Models
         [ModelBinder(typeof(GovUkMandatoryStringBinder))]
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child string")]
         public string ChildString { get; set; }
+
+        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
+        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child text area string")]
+        public string ChildTextArea { get; set; }
     }
 }
