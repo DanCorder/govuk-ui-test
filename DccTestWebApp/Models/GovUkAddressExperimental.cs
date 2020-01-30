@@ -34,16 +34,8 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated text area string")]
         public string BinderValidatedTextArea { get; set; }
 
-        //[ModelBinder(typeof(GovUkMandatoryRadioBinder))]
         [Required(ErrorMessage = "Select a binder validated radio option")]
         public RadioButtonValues? BinderValidatedRadio { get; set; }
-
-        [GovUkValidateRequired(ErrorMessageIfMissing = "Select a custom validated radio option")]
-        [GovUkDisplayNameForErrors(
-            NameAtStartOfSentence = "Custom validated radio option",
-            NameWithinSentence = "Custom validated radio option"
-        )]
-        public RadioButtonValues? CustomValidatedRadio { get; set; }
 
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
@@ -63,7 +55,6 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child text area string")]
         public string ChildTextArea { get; set; }
 
-        //[ModelBinder(typeof(GovUkMandatoryRadioBinder))]
         [Required(ErrorMessage = "Select a child radio option")]
         public RadioButtonValues? ChildValidatedRadio { get; set; }
     }

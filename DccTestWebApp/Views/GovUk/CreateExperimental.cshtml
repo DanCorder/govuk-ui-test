@@ -31,7 +31,7 @@
                 Classes = "govuk-!-margin-bottom-4"
             }))
 
-            @(await Html.GovUkRadiosFromModelStateFor(
+            @(await Html.GovUkRadiosFor(
                 m => m.BinderValidatedRadio,
                 fieldsetOptions: new FieldsetViewModel
                 {
@@ -44,7 +44,7 @@
                 }
             ))
 
-            @(await Html.GovUkRadiosFromModelStateFor(
+            @(await Html.GovUkRadiosFor(
                m => m.Child.ChildValidatedRadio,
                fieldsetOptions: new FieldsetViewModel
                {
@@ -55,19 +55,6 @@
                    },
                    Classes = "govuk-!-margin-top-6"
                }
-            ))
-
-            @(Html.GovUkRadiosFor(
-                m => m.CustomValidatedRadio,
-                fieldsetOptions: new FieldsetViewModel
-                {
-                    Legend = new LegendViewModel
-                    {
-                        Text = "Custom validated radio options",
-                        Classes = "govuk-fieldset__legend--m"
-                    },
-                    Classes = "govuk-!-margin-top-6"
-                }
             ))
 
             @(await Html.GovUkTextInputFor(
