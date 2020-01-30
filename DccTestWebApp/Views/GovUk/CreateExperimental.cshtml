@@ -65,7 +65,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextAreaFromModelStateFor(
+            @(await Html.GovUkTextAreaFor(
                 m => m.BinderValidatedTextArea,
                 labelOptions: new LabelViewModel
                 {
@@ -73,17 +73,8 @@
                 }
             ))
 
-            @(await Html.GovUkTextAreaFromModelStateFor(
+            @(await Html.GovUkTextAreaFor(
                 m => m.Child.ChildTextArea,
-                labelOptions: new LabelViewModel
-                {
-                    Text = "Child text area"
-                }
-            ))
-
-            @(Html.GovUkTextAreaFor(
-                m => m.CustomValidatedTextArea,
-                rows: 4,
                 labelOptions: new LabelViewModel
                 {
                     Text = "Child text area"
