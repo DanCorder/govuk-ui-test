@@ -56,11 +56,8 @@ namespace DccTestWebApp.Models
         [Required(ErrorMessage = "Select a binder validated radio option")]
         public RadioButtonValues? BinderValidatedRadio { get; set; }
 
-        [GovUkValidateCheckboxNumberOfResponsesRangeDcc(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some binder validated checkbox values", PropertyNameForErrorMessage = "binder validated checkbox values")]
+        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some binder validated checkbox values", PropertyNameForErrorMessage = "binder validated checkbox values")]
         public List<CheckboxValues> BinderValidatedCheckboxes { get; set; } = new List<CheckboxValues>();
-
-        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some custom validated checkbox values")]
-        public List<CheckboxValues> CustomValidatedCheckboxes { get; set; }
 
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
@@ -80,7 +77,7 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child text area string")]
         public string ChildTextArea { get; set; }
 
-        [GovUkValidateCheckboxNumberOfResponsesRangeDcc(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some child checkbox values", PropertyNameForErrorMessage = "child checkbox values")]
+        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some child checkbox values", PropertyNameForErrorMessage = "child checkbox values")]
         public List<CheckboxValues> ChildCheckboxes { get; set; } = new List<CheckboxValues>();
 
         [Required(ErrorMessage = "Select a child radio option")]
