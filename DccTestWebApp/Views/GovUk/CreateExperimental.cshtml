@@ -31,6 +31,46 @@
                 Classes = "govuk-!-margin-bottom-4"
             }))
 
+            @(Html.GovUkCheckboxesFor(
+                m => m.CustomValidatedCheckboxes,
+                fieldsetOptions: new FieldsetViewModel
+                {
+                    Legend = new LegendViewModel
+                    {
+                        Text = "Custom validated checkboxes",
+                        Classes = "govuk-fieldset__legend--m"
+                    },
+                    Classes = "govuk-!-margin-top-6"
+                }
+            ))
+
+            @(await Html.GovUkCheckboxesDccFor(
+                m => m.BinderValidatedCheckboxes,
+                fieldsetOptions: new FieldsetViewModel
+                {
+                    Legend = new LegendViewModel
+                    {
+                        Text = "Binder validated checkboxes",
+                        Classes = "govuk-fieldset__legend--m"
+                    },
+                    Classes = "govuk-!-margin-top-6"
+                }
+            ))
+
+            @(await Html.GovUkCheckboxesDccFor(
+                m => m.Child.ChildCheckboxes,
+                fieldsetOptions: new FieldsetViewModel
+                {
+                    Legend = new LegendViewModel
+                    {
+                        Text = "Child checkboxes",
+                        Classes = "govuk-fieldset__legend--m"
+                    },
+                    Classes = "govuk-!-margin-top-6"
+                }
+            ))
+
+
             @(await Html.GovUkRadiosFor(
                 m => m.BinderValidatedRadio,
                 fieldsetOptions: new FieldsetViewModel
