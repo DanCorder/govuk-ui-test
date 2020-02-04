@@ -56,7 +56,7 @@ namespace DccTestWebApp.Models
         [Required(ErrorMessage = "Select a binder validated radio option")]
         public RadioButtonValues? BinderValidatedRadio { get; set; }
 
-        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some binder validated checkbox values", PropertyNameForErrorMessage = "binder validated checkbox values")]
+        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, PropertyNameForErrorMessage = "binder validated checkbox values")]
         public List<CheckboxValues> BinderValidatedCheckboxes { get; set; } = new List<CheckboxValues>();
 
         [GovUkDisplayNameForErrors(
@@ -66,11 +66,7 @@ namespace DccTestWebApp.Models
         [GovUkValidateCharacterCount(MaxCharacters = 20)]
         public string CustomCountedString { get; set; }
 
-        [GovUkDisplayNameForErrors(
-            NameAtStartOfSentence = "Binder counted string",
-            NameWithinSentence = "binder counted string"
-        )]
-        [GovUkValidateCharacterCount(MaxCharacters = 20)]
+        [GovUkValidateCharacterCount(MaxCharacters = 20, NameAtStartOfSentence = "Binder counted string", NameWithinSentence = "binder counted string")]
         public string BinderCountedString { get; set; }
 
         [Required]
@@ -91,17 +87,13 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child text area string")]
         public string ChildTextArea { get; set; }
 
-        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some child checkbox values", PropertyNameForErrorMessage = "child checkbox values")]
+        [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, PropertyNameForErrorMessage = "child checkbox values")]
         public List<CheckboxValues> ChildCheckboxes { get; set; } = new List<CheckboxValues>();
 
         [Required(ErrorMessage = "Select a child radio option")]
         public RadioButtonValues? ChildValidatedRadio { get; set; }
 
-        [GovUkDisplayNameForErrors(
-            NameAtStartOfSentence = "Child counted string",
-            NameWithinSentence = "child counted string"
-        )]
-        [GovUkValidateCharacterCount(MaxCharacters = 20)]
+        [GovUkValidateCharacterCount(MaxCharacters = 20, IsRequired = true, NameAtStartOfSentence = "Child counted string", NameWithinSentence = "child counted string")]
         public string ChildCountedString { get; set; }
     }
 }
