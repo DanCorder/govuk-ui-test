@@ -32,19 +32,6 @@
             }))
 
             @(Html.GovUkCharacterCountFor(
-                m => m.CustomCountedString,
-                labelOptions: new LabelViewModel
-                {
-                    Text = "Fill in some custom counted text",
-                    Classes = "govuk-label--m"
-                },
-                formGroupOptions: new FormGroupViewModel
-                {
-                    Classes = "govuk-!-margin-top-6"
-                }
-            ))
-
-            @(Html.GovUkCharacterCountDccFor(
                 m => m.BinderCountedString,
                 labelOptions: new LabelViewModel
                 {
@@ -57,7 +44,7 @@
                 }
             ))
 
-            @(Html.GovUkCharacterCountDccFor(
+            @(Html.GovUkCharacterCountFor(
                 m => m.Child.ChildCountedString,
                 labelOptions: new LabelViewModel
                 {

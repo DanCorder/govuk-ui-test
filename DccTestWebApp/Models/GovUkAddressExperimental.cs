@@ -59,13 +59,6 @@ namespace DccTestWebApp.Models
         [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, PropertyNameForErrorMessage = "binder validated checkbox values")]
         public List<CheckboxValues> BinderValidatedCheckboxes { get; set; } = new List<CheckboxValues>();
 
-        [GovUkDisplayNameForErrors(
-            NameAtStartOfSentence = "Custom counted string",
-            NameWithinSentence = "custom counted string"
-        )]
-        [GovUkValidateCharacterCount(MaxCharacters = 20)]
-        public string CustomCountedString { get; set; }
-
         [GovUkValidateCharacterCount(MaxCharacters = 20, NameAtStartOfSentence = "Binder counted string", NameWithinSentence = "binder counted string")]
         public string BinderCountedString { get; set; }
 
