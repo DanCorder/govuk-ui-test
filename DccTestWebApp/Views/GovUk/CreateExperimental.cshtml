@@ -57,7 +57,7 @@
                 }
             ))
 
-            @(await Html.GovUkCheckboxesFor(
+            @(Html.GovUkCheckboxesFor(
                 m => m.BinderValidatedCheckboxes,
                 fieldsetOptions: new FieldsetViewModel
                 {
@@ -70,7 +70,7 @@
                 }
             ))
 
-            @(await Html.GovUkCheckboxesFor(
+            @(Html.GovUkCheckboxesFor(
                 m => m.Child.ChildCheckboxes,
                 fieldsetOptions: new FieldsetViewModel
                 {
@@ -84,7 +84,7 @@
             ))
 
 
-            @(await Html.GovUkRadiosFor(
+            @(Html.GovUkRadiosFor(
                 m => m.BinderValidatedRadio,
                 fieldsetOptions: new FieldsetViewModel
                 {
@@ -97,7 +97,7 @@
                 }
             ))
 
-            @(await Html.GovUkRadiosFor(
+            @(Html.GovUkRadiosFor(
                m => m.Child.ChildValidatedRadio,
                fieldsetOptions: new FieldsetViewModel
                {
@@ -110,7 +110,7 @@
                }
             ))
 
-            @(await Html.GovUkTextInputFor(
+            @(Html.GovUkTextInputFor(
                 m => m.BinderValidatedInt,
                 labelOptions: new LabelViewModel
                 {
@@ -119,7 +119,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputFor(
+            @(Html.GovUkTextInputFor(
                 m => m.Child.ChildInt,
                 labelOptions: new LabelViewModel
                 {
@@ -128,7 +128,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputFor(
+            @(Html.GovUkTextInputFor(
                 m => m.BinderValidatedString,
                 labelOptions: new LabelViewModel
                 {
@@ -137,7 +137,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextInputFor(
+            @(Html.GovUkTextInputFor(
                 m => m.Child.ChildString,
                 labelOptions: new LabelViewModel
                 {
@@ -146,7 +146,7 @@
                 classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
             ))
 
-            @(await Html.GovUkTextAreaFor(
+            @(Html.GovUkTextAreaFor(
                 m => m.BinderValidatedTextArea,
                 labelOptions: new LabelViewModel
                 {
@@ -154,7 +154,7 @@
                 }
             ))
 
-            @(await Html.GovUkTextAreaFor(
+            @(Html.GovUkTextAreaFor(
                 m => m.Child.ChildTextArea,
                 labelOptions: new LabelViewModel
                 {
