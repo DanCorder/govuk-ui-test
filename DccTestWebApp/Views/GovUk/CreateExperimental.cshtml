@@ -18,11 +18,6 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        @(Html.GovUkErrorSummary())
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
         <form asp-action="CreateExperimental">
             @(Html.AntiForgeryToken())
             @(Html.GovUkButton(new ButtonViewModel

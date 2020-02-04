@@ -8,6 +8,6 @@ namespace DccTestWebApp.Models
 {
     public class GovUkPageModel : GovUkViewModel
     {
-        public GovUkAddress Address { get; set; } = new GovUkAddress();
+        public GovUkAddressExperimental Address { get; set; } = new GovUkAddressExperimental();
     }
 }

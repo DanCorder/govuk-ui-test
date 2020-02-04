@@ -35,7 +35,7 @@ namespace DccTestWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperimental(GovUkAddressExperimental viewModel)
         {
-            if (!ModelState.IsValid || viewModel.HasAnyErrors())
+            if (!ModelState.IsValid)
             {
                 return View(nameof(CreateExperimental), viewModel);
             }

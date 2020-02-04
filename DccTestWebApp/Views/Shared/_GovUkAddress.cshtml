@@ -1,9 +1,9 @@
 ﻿@using GovUkDesignSystem
 @using GovUkDesignSystem.GovUkDesignSystemComponents
-@model DccTestWebApp.Models.GovUkAddress
+@model DccTestWebApp.Models.GovUkAddressExperimental
 
 @(Html.GovUkTextInputFor(
-    m => m.ID,
+    m => m.BinderValidatedInt,
     labelOptions: new LabelViewModel
     {
         Text = "ID"
@@ -12,7 +12,7 @@
 ))
 
 @(Html.GovUkTextInputFor(
-    m => m.Street,
+    m => m.BinderValidatedString,
     labelOptions: new LabelViewModel
     {
         Text = "Street"
@@ -27,7 +27,7 @@
 ))
 
 @(Html.GovUkTextInputFor(
-    m => m.PostCode,
+    m => m.BinderValidatedTextArea,
     labelOptions: new LabelViewModel
     {
         Text = "Postcode"

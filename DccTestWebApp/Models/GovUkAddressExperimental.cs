@@ -39,7 +39,7 @@ namespace DccTestWebApp.Models
         checkboxValue5
     }
 
-    public class GovUkAddressExperimental : GovUkViewModel //qq:DCC remove inheritance
+    public class GovUkAddressExperimental
     {
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
         [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a binder validated int", NameAtStartOfSentence = "Binder validated int")]
