@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DccTestWebApp.Models;
+﻿using DccTestWebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using GovUkDesignSystem.Parsers;
 
 namespace DccTestWebApp.Controllers
 {
@@ -60,7 +55,7 @@ namespace DccTestWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateUsingPartial(GovUkPageModel viewModel)
         {
-            if (!ModelState.IsValid || viewModel.HasAnyErrors())
+            if (!ModelState.IsValid)
             {
                 return View(nameof(CreateUsingPartial), viewModel);
             }

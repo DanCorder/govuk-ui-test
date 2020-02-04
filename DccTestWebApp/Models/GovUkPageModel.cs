@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DccTestWebApp.Models
 {
-    public class GovUkPageModel : GovUkViewModel
+    public class GovUkPageModel
     {
         public GovUkAddressExperimental Address { get; set; } = new GovUkAddressExperimental();
     }

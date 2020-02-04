@@ -12,7 +12,7 @@
 <hr />
 <div class="row">
 
-    @(Html.GovUkErrorSummary())
+    @(Html.GovUkErrorSummary(ViewData.ModelState ))
 
     <div class="col-md-4">
         <form asp-action="CreateUsingPartial">
