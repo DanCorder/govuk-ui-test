@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DccTestWebApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using GovUkDesignSystem.Parsers;
 
 namespace DccTestWebApp.Controllers
 {
@@ -34,6 +35,8 @@ namespace DccTestWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperimental(GovUkAddressExperimental viewModel)
         {
+            viewModel.ParseAndValidateParameters(Request, m => m.CustomCountedString);
+
             if (!ModelState.IsValid || viewModel.HasAnyErrors())
             {
                 return View(nameof(CreateExperimental), viewModel);

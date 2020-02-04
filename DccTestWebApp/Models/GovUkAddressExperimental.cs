@@ -59,6 +59,20 @@ namespace DccTestWebApp.Models
         [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, ErrorMessageIfNothingSelected = "Select some binder validated checkbox values", PropertyNameForErrorMessage = "binder validated checkbox values")]
         public List<CheckboxValues> BinderValidatedCheckboxes { get; set; } = new List<CheckboxValues>();
 
+        [GovUkDisplayNameForErrors(
+            NameAtStartOfSentence = "Custom counted string",
+            NameWithinSentence = "custom counted string"
+        )]
+        [GovUkValidateCharacterCount(MaxCharacters = 20)]
+        public string CustomCountedString { get; set; }
+
+        [GovUkDisplayNameForErrors(
+            NameAtStartOfSentence = "Binder counted string",
+            NameWithinSentence = "binder counted string"
+        )]
+        [GovUkValidateCharacterCount(MaxCharacters = 20)]
+        public string BinderCountedString { get; set; }
+
         [Required]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
     }
@@ -82,5 +96,12 @@ namespace DccTestWebApp.Models
 
         [Required(ErrorMessage = "Select a child radio option")]
         public RadioButtonValues? ChildValidatedRadio { get; set; }
+
+        [GovUkDisplayNameForErrors(
+            NameAtStartOfSentence = "Child counted string",
+            NameWithinSentence = "child counted string"
+        )]
+        [GovUkValidateCharacterCount(MaxCharacters = 20)]
+        public string ChildCountedString { get; set; }
     }
 }
