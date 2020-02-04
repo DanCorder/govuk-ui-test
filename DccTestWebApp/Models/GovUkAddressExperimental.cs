@@ -45,15 +45,13 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a binder validated int", NameAtStartOfSentence = "Binder validated int")]
         public int? BinderValidatedInt { get; set; }
 
-        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated string")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a binder validated string")]
         public string BinderValidatedString { get; set; }
 
-        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a binder validated text area string")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a binder validated text area string")]
         public string BinderValidatedTextArea { get; set; }
 
-        [Required(ErrorMessage = "Select a binder validated radio option")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Select a binder validated radio option")]
         public RadioButtonValues? BinderValidatedRadio { get; set; }
 
         [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, PropertyNameForErrorMessage = "binder validated checkbox values")]
@@ -62,7 +60,7 @@ namespace DccTestWebApp.Models
         [GovUkValidateCharacterCount(MaxCharacters = 20, NameAtStartOfSentence = "Binder counted string", NameWithinSentence = "binder counted string")]
         public string BinderCountedString { get; set; }
 
-        [Required]
+        [GovUkValidateRequired]
         public DccAddressChild Child { get; set; } = new DccAddressChild();
     }
 
@@ -72,18 +70,16 @@ namespace DccTestWebApp.Models
         [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a child int", NameAtStartOfSentence = "Child int")]
         public int? ChildInt { get; set; }
 
-        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child string")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a child string")]
         public string ChildString { get; set; }
 
-        [ModelBinder(typeof(GovUkMandatoryStringBinder))]
-        [GovUkDataBindingStringErrorText(ErrorMessageIfMissing = "Enter a child text area string")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a child text area string")]
         public string ChildTextArea { get; set; }
 
         [GovUkValidateCheckboxNumberOfResponsesRange(MinimumSelected = 2, MaximumSelected = 4, PropertyNameForErrorMessage = "child checkbox values")]
         public List<CheckboxValues> ChildCheckboxes { get; set; } = new List<CheckboxValues>();
 
-        [Required(ErrorMessage = "Select a child radio option")]
+        [GovUkValidateRequired(ErrorMessageIfMissing = "Select a child radio option")]
         public RadioButtonValues? ChildValidatedRadio { get; set; }
 
         [GovUkValidateCharacterCount(MaxCharacters = 20, IsRequired = true, NameAtStartOfSentence = "Child counted string", NameWithinSentence = "child counted string")]
