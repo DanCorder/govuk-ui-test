@@ -42,8 +42,16 @@ namespace DccTestWebApp.Models
     public class GovUkAddressExperimental
     {
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
-        [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a binder validated int", NameAtStartOfSentence = "Binder validated int")]
+        [GovUkDataBindingMandatoryIntErrorText("Enter a binder validated int", "Binder validated int")]
         public int? BinderValidatedInt { get; set; }
+
+        [ModelBinder(typeof(GovUkOptionalIntBinder))]
+        [GovUkDataBindingOptionalIntErrorText("Binder validated optional int")]
+        public int? BinderValidatedOptionalInt { get; set; }
+
+        [ModelBinder(typeof(GovUkOptionalIntBinder))]
+        [GovUkDataBindingOptionalIntErrorText("Binder validated optional int without UI")]
+        public int? BinderValidatedOptionalIntWithoutUI { get; set; }
 
         [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a binder validated string")]
         public string BinderValidatedString { get; set; }
@@ -67,8 +75,12 @@ namespace DccTestWebApp.Models
     public class DccAddressChild
     {
         [ModelBinder(typeof(GovUkMandatoryIntBinder))]
-        [GovUkDataBindingIntErrorText(ErrorMessageIfMissing = "Enter a child int", NameAtStartOfSentence = "Child int")]
+        [GovUkDataBindingMandatoryIntErrorText("Enter a child int", "Child int")]
         public int? ChildInt { get; set; }
+
+        [ModelBinder(typeof(GovUkOptionalIntBinder))]
+        [GovUkDataBindingOptionalIntErrorText("Child optional int")]
+        public int? ChildOptionalInt { get; set; }
 
         [GovUkValidateRequired(ErrorMessageIfMissing = "Enter a child string")]
         public string ChildString { get; set; }

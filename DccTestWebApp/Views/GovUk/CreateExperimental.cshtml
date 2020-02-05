@@ -26,6 +26,24 @@
                 Classes = "govuk-!-margin-bottom-4"
             }))
 
+            @(Html.GovUkTextInputFor(
+                m => m.BinderValidatedOptionalInt,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Optional Int"
+                },
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
+            @(Html.GovUkTextInputFor(
+                m => m.Child.ChildOptionalInt,
+                labelOptions: new LabelViewModel
+                {
+                    Text = "Child Optional Int"
+                },
+                classes: "govuk-input--width-10 govuk-!-margin-right-2 govuk-!-margin-bottom-2"
+            ))
+
             @(Html.GovUkCharacterCountFor(
                 m => m.BinderCountedString,
                 labelOptions: new LabelViewModel
